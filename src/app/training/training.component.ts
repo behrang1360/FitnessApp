@@ -1,17 +1,28 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
+
+import { TrainingService } from './training.service';
 
 @Component({
-  selector: "app-training",
-  templateUrl: "./training.component.html",
-  styleUrls: ["./training.component.css"]
+  selector: 'app-training',
+  templateUrl: './training.component.html',
+  styleUrls: ['./training.component.css']
 })
 export class TrainingComponent implements OnInit {
-  onGoingTraining = false;
-  constructor() {}
+  ongoingTraining = false;
+  exerciseSubscription: Subscription;
 
-  ngOnInit() { }
+  constructor(private trainingService: TrainingService) {}
 
-  startOngoingTraining() {
-    this.onGoingTraining = true;
+  ngOnInit() {
+    this.exerciseSubscription = this.trainingService.exerciseChanged.subscribe(
+      exercise => {
+        if (exercise) {
+          this.ongoingTraining = true;
+        } else {
+          this.ongoingTraining = false;
+        }
+      }
+    );
   }
 }
