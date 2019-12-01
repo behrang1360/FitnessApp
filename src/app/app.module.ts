@@ -13,8 +13,9 @@ import { PastTariningComponent } from "./training/past-tarining/past-tarining.co
 import { CurrentTariningComponent } from "./training/current-tarining/current-tarining.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { AppRoutingModule } from "./app-routing/app-routing.module";
-import { HeaderComponent } from './navigation/header.component';
-import { SidnavComponent } from './navigation/sidnav.component';
+import { HeaderComponent } from "./navigation/header.component";
+import { SidnavComponent } from "./navigation/sidnav.component";
+import { DialogboxComponent } from "./shared/dialogbox/dialogbox.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SidnavComponent } from './navigation/sidnav.component';
     CurrentTariningComponent,
     WelcomeComponent,
     HeaderComponent,
-    SidnavComponent
+    SidnavComponent,
+    DialogboxComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,7 @@ import { SidnavComponent } from './navigation/sidnav.component';
     FlexLayoutModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogboxComponent]
 })
 export class AppModule {}

@@ -9,4 +9,7 @@
   </mat-tab>
 </mat-tab-group>
 
-<app-current-tarining *ngIf="onGoingTraining"></app-current-tarining>
+<app-current-tarining
+  *ngIf="onGoingTraining"
+  (quitTrainig)="onGoingTraining = false"
+></app-current-tarining>

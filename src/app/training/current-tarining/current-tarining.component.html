@@ -1,1 +1,14 @@
-<p>current-tarining works!</p>
+<section
+  class="currentTraining"
+
+  fxLayout="column"
+  fxLayoutGap="20px"
+  fxLayoutAlign="center center"
+>
+  <mat-progress-spinner
+    mode="determinate"
+    [value]="progressValue"
+  ></mat-progress-spinner>
+  <span>Progress {{ progressValue }} %</span>
+  <button mat-raised-button color="primary" (click)="stopInterval()">Stop</button>
+</section>
