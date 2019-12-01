@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav #sideNav role="navigation">
+    <app-sidnav [sideNav]="sideNav"></app-sidnav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header (toggelEventEmitter)="sideNav.toggle()"></app-header>
+    <main> 
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

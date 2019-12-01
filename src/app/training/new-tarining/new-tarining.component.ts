@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-new-tarining',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewTariningComponent implements OnInit {
 
+  @Output() newTrainingStart = new EventEmitter<void>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onNewTrainingStart() {
+    this.newTrainingStart.emit();
   }
 
 }
